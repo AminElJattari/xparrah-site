@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xParrah</title>
+  <!-- Prevent animations on first paint -->
+  <script>document.documentElement.classList.add('no-anim');</script>
+  <style>.no-anim, .no-anim * { transition: none !important; }</style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <aside class="sidebar" aria-label="Sidebar">
+    <nav>
+      <a href="index.html" class="nav-item" data-nav="home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="downloads.html" class="nav-item" data-nav="downloads">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+        <span>Downloads</span>
+      </a>
+      <a href="community.html" class="nav-item" data-nav="community">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20H4a1 1 0 0 1-1-1v-5a7 7 0 1 1 14 0v5a1 1 0 0 1-1 1h-3"/></svg>
+        <span>Community</span>
+      </a>
+    </nav>
+  </aside>
+
+  <header class="topbar">
+    <button id="menuToggle" aria-label="Toggle sidebar" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="xParrah logo" />
+      <span>xParrah</span>
+    </a>
+    <div class="spacer"></div>
+    <div class="account" id="accountArea">
+      <a href="login.html" class="btn btn-small" id="loginBtn">Log in</a>
+      <a href="register.html" class="btn btn-secondary btn-small" id="registerBtn">Register</a>
+      <div id="userMenu" class="user-menu" hidden>
+        <span id="userLabel"></span>
+        <button class="btn btn-small btn-secondary" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="hero card">
+      <h1>Welcome to xParrah</h1>
+    </section>
+  </main>
+
+  <script src="assets/js/auth.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => document.documentElement.classList.remove('no-anim'));
+    });
+  </script>
+</body>
+</html>
